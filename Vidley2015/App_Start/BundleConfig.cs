@@ -24,7 +24,7 @@ namespace Vidley2015
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-cosmo3.css",
                       "~/Content/site.css"));
         }
     }
