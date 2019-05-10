@@ -25,7 +25,7 @@ namespace Vidley2015
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-cosmo3.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
         }
     }
 }

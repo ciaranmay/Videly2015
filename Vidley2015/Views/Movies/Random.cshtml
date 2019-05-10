@@ -1,8 +1,31 @@
-﻿@model Vidley2015.Models.Movie
+﻿@using Vidley2015.Models
+@model Vidley2015.ViewModels.RandomMovieViewModel
 @{
     ViewBag.Title = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@*
+    classes based on conditions
+*@
+@{
+    var className = Model.Customers.Count > 5 ? "popular" : "unPopular";
+}
+<h2 class="@className"> @Model.Movie.Name</h2>
+@if (Model.Customers.Count == 0)
+{
+    <p>no one has rented this movie before</p>
+}
+else
+{
+    <ul>
+        @foreach (var cus in Model.Customers)
+        {
+            <li>
+                @cus.Name
+            </li>
+        }
 
-<h2> @Model.Name</h2>
+    </ul> 
+}
+
 
