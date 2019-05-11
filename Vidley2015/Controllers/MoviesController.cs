@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.Mvc;
 using Vidley2015.Models;
@@ -10,21 +11,33 @@ namespace Vidley2015.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies
-       
-        public ActionResult Index()
+        private ApplicationDbContext _context;
+
+        public MoviesController()
         {
-         
-            return View();
+            _context = new ApplicationDbContext();
         }
 
-        // supply constraints to attribute routing 
-        //min,max,minlength,int,float,guid
-        [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1, 12)}")]
-        
-        public ActionResult ByReleaseYear(int? year, string month)
+        protected override void Dispose(bool disposing)
         {
-            return Content(year + "/" + month);
-        }   
+            _context.Dispose();
+        }
+        // GET: Movies
+
+        public ActionResult Index()
+        {
+            var movies = _context.Movies.ToList();
+            return View(movies);
+        }
+
+        public ActionResult Details(int id)
+        {
+
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
+            if (movie == null) return HttpNotFound();
+
+            return View(movie);
+        }
+
     }
 }

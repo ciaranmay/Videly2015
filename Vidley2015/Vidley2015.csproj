@@ -196,7 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -214,6 +214,18 @@
     <Compile Include="Migrations\201905111229534_AddMembershipType.cs" />
     <Compile Include="Migrations\201905111229534_AddMembershipType.Designer.cs">
       <DependentUpon>201905111229534_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905111233365_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\201905111233365_PopulateMembershipType.Designer.cs">
+      <DependentUpon>201905111233365_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905111242095_AppliedDataAnnAtationsToCustomerName.cs" />
+    <Compile Include="Migrations\201905111242095_AppliedDataAnnAtationsToCustomerName.Designer.cs">
+      <DependentUpon>201905111242095_AppliedDataAnnAtationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905111401479_addmovies.cs" />
+    <Compile Include="Migrations\201905111401479_addmovies.Designer.cs">
+      <DependentUpon>201905111401479_addmovies.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -291,8 +303,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +328,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905111229534_AddMembershipType.resx">
       <DependentUpon>201905111229534_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905111233365_PopulateMembershipType.resx">
+      <DependentUpon>201905111233365_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905111242095_AppliedDataAnnAtationsToCustomerName.resx">
+      <DependentUpon>201905111242095_AppliedDataAnnAtationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905111401479_addmovies.resx">
+      <DependentUpon>201905111401479_addmovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

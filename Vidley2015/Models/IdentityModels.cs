@@ -21,7 +21,9 @@ namespace Vidley2015.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Customer> Customers { get; set; }
-       
+        public DbSet<Movie> Movies { get; set; }
+
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -32,5 +34,7 @@ namespace Vidley2015.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Vidley2015.Models.MembershipType> MembershipTypes { get; set; }
     }
 }

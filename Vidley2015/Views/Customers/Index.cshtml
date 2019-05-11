@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Vidley2015.Models.Movie>
+﻿@model IEnumerable<Vidley2015.Models.Customer>
 
 @{
     ViewBag.Title = "Index";
@@ -13,7 +13,13 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.MembershipType.Id)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSubscribedToNewsLetter)
         </th>
         <th></th>
     </tr>
@@ -21,7 +27,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.MembershipType.Id)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSubscribedToNewsLetter)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
