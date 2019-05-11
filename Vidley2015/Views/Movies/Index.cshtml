@@ -1,0 +1,36 @@
+﻿@model Vidley2015.Models.Movie
+@{
+    ViewBag.Title = "Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+@{
+    if (Model == null)
+     {
+         <p>
+             there are no movies
+         </p>
+     }
+}
+<table table table-bordered>
+    <thead>
+        <tr>Movies </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model.Name)
+        {
+
+
+            <tr>
+                <tb>
+                   @Model.Name
+                </tb>
+
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+

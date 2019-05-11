@@ -1,0 +1,38 @@
+﻿@model Vidley2015.Models.Customer
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+@{
+    if (Model == null)
+     {
+         <p>
+             there are no customers
+         </p>
+     }
+    {
+         <p>There are no customers</p>
+     }
+}
+<table table table-bordered>
+    <thead>
+    <tr>customer</tr>
+    </thead>
+    <tbody>
+    @foreach (var cust in Model.Name)
+    {
+
+        <tr>
+            <tb>
+                @Html.ActionLink(cust, "Index", "Customer", new {id = Model.Id})
+            </tb>
+
+         
+        </tr>
+    }
+    </tbody>
+  
+</table>
+

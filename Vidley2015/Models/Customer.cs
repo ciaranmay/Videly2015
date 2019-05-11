@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Vidley2015.Models
 {
-    public class Customers
+    public class Customer
     {
         public int Id { get; set; }
         public string Name { get; set; }

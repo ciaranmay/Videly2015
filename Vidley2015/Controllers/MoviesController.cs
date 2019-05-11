@@ -11,23 +11,13 @@ namespace Vidley2015.Controllers
     public class MoviesController : Controller
     {
         // GET: Movies
-        public ActionResult Random()
+       
+        public ActionResult Index()
         {
-            var movie = new Movie() {Name = "Shrek"};
-            var customers = new List<Customers>
-            {
-                new Customers {Name = "Customer 1"},
-                new Customers {Name = "Customer 2"}
-
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-            return View(viewModel);
+         
+            return View();
         }
+
         // supply constraints to attribute routing 
         //min,max,minlength,int,float,guid
         [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1, 12)}")]
